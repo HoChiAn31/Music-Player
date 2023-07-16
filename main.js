@@ -101,7 +101,7 @@ const app = {
     render: function () {
         const htmls = this.songs.map((song,index) => {
             return `
-            <div class="song ${index === this.currentIndex ? 'active' : ''}" data-index="${index}">
+            <div class="song ${index === this.currentIndex ? "active" : ""}" data-index="${index}">
             <div class="thumb" style="background-image: url('${song.image}')">
             </div>
             <div class="body">
@@ -236,9 +236,10 @@ const app = {
                 //Xử lý khi click vào song
                 if(songNode){
                     _this.currentIndex = Number(songNode.dataset.index)
-                    _this.loadCurrentSong()
-                    audio.play()
-                    _this.render
+                    _this.loadCurrentSong();
+                    _this.render();
+                    audio.play();
+                   
                 }
                 //Xử lý khi click vào option
                 if(e.target.closest('.option')){ }
