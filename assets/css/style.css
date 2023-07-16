@@ -1,0 +1,196 @@
+:root {
+    --primary-color: rgba(247, 91, 63, 0.755);
+    --text-color: #333;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: inherit;
+    /* background-image: url('https://scontent.fsgn17-1.fna.fbcdn.net/v/t39.30808-6/326725801_565393565484361_2465485402619539011_n.jpg?_nc_cat=111&cb=99be929b-59f725be&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=LNdVOZVoF1EAX-PzsDp&_nc_ht=scontent.fsgn17-1.fna&oh=00_AfCPGhtbVpIDPk8TQa6BikF9kOHhLFGY9wctTg4TiFKVTg&oe=64B92C1C'); */
+}
+
+body {
+    background: linear-gradient( 50deg, rgb(224, 197, 192) 0%, rgb(194, 185, 185) 60%, rgb(227, 223, 221) 100% );
+
+}
+
+html {
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+
+}
+
+.player {
+    position: relative;
+    max-width: 480px;
+    margin: 0 auto;
+    
+
+}
+
+/* mặc định ẩn icon pause || */
+.player .icon-pause {
+    display: none;
+}
+
+/* khi play thì icon pause || sẽ xuất hiện */
+.player.playing .icon-pause {
+    display: inline-block;
+}
+
+/* khi dừng thì icon play sẽ ẩn */
+.player.playing .icon-play {
+    display: none;
+}
+
+.dashboard {
+    padding: 16px 16px 14px;
+    background-color: #fff;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    max-width: 480px;
+    border-bottom: 1px solid #ebebeb;
+    background: linear-gradient( 50deg, rgb(224, 197, 192) 0%, rgb(194, 185, 185) 60%, rgb(227, 223, 221) 100% );
+}
+
+header {
+    text-align: center;
+    font-size: 12px;
+}
+
+header h4 {
+    color: var(--primary-color);
+    font-size: 14px;
+}
+
+header h2 {
+    font-size: 20px;
+    margin-bottom: 8px;
+}
+
+
+.cd {
+    display: flex;
+    margin: auto;
+    width: 200px;
+}
+
+.cd-thumb {
+    width: 100%;
+    padding-top: 100%;
+    border-radius: 50%;
+    background-color: #333;
+    background-size: cover;
+    margin: auto;
+}
+
+.control {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 0px;
+}
+
+.control .btn {
+    font-size: 18px;
+    color: #666;
+}
+
+.control .btn.active {
+    color: var(--primary-color)
+}
+
+.control .btn-toggle-play {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    font-size: 24px;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--primary-color);
+}
+
+.progress {
+    width: 100%;
+    -webkit-appearance: none;
+    height: 8px;
+    background: #fff;
+    outline: none;
+    opacity: 0.7;
+    -webkit-transition: 0.2s;
+    transition: opacity 0.2s;
+
+}
+
+/* tạo kiểu dáng nút trượt */
+.progress::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 12px;
+    height: 6px;
+    background-color: var(--primary-color);
+    cursor: pointer;
+}
+
+.playlist {
+    margin-top: 408px;
+    padding: 12px;
+}
+
+.song {
+    display: flex;
+    align-items: center;
+    margin-bottom: 12px;
+    padding: 0 8px;
+    background-color: #fff;
+    border-radius: 4%;
+    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
+}
+
+.song.active {
+    background-color: var(--primary-color);
+}
+
+.song:active {
+    opacity: 0.8;
+}
+
+.song.active .option,
+.song.active .author,
+.song.active .title {
+    color: #fff;
+}
+
+.song .thumb {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background-color: #333;
+    background-size: cover;
+    margin: 0 8px 0 0;
+}
+
+.song .body {
+    flex: 1;
+    padding: 16px 0;
+}
+
+.song .title {
+    font-size: 18px;
+    color: var(--text-color);
+}
+
+.song .author {
+    color: #999;
+    font-size: 14px;
+}
+
+.song .option {
+    color: #999;
+    padding: 16px;
+    font-size: 18px;
+}
